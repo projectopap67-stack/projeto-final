@@ -1,0 +1,109 @@
+:root{
+    --terracota: #c2410c;
+    --amarelo: #f59e0b;
+    --verde: #15803d;
+    --creme: #fff7e6;
+    --fundo: #f2e7d0;
+    --verde-agua: #167c80;
+    --castanho: #4a2c17;
+    --fonte: "Fredoka", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--fundo);
+    background-image: radial-gradient(rgba(74, 44, 23, 0.12) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    font-family: var(--fonte);
+}
+
+.livro {
+width: min(94vw, 1000px);
+aspect-ratio: 13 / 9;
+border: 10px solid var(--castanho);
+border-radius: 26px;
+overflow: hidden;
+position: relative;
+box-shadow: 0 20px 40px rgba(74, 44, 23, 0.35);
+}
+
+.capa {
+position: absolute;
+inset: 0;
+color: var(--creme);
+background-color: var(--terracota);
+background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.07) 0 2px, transparent 2px 36px),
+repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.07) 0 2px, transparent 2px 36px);
+}
+
+.capa__texto {
+    position: absolute;
+    left: 7%;
+    top: 0;
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.capa__etiqueta {
+    font-size: clamp(0.55rem, 1.1vw, 0.8rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--amarelo);
+}
+
+.capa__titulo {
+    font-size: clamp(3rem, 9vw, 6rem);
+    line-height: 0.95; 
+    font-weight: 700;
+}
+
+.capa__sub {
+    font-size: clamp(0.8rem, 1.7vw, 1.15rem);
+    max-width: 22ch;
+}
+
+.capa__link {
+    color: var(--creme);
+    font-size: 0.85rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.7em 1.4em;
+    border-radius: 14px;
+    background: var(--amarelo);
+    color: var(--castanho);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: clamp(0.8rem, 1.5vw, 1.05rem);
+    text-decoration: none;
+    box-shadow: 0 4px 0 #b45309;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.botao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #b45309;
+}
+
+.botao:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #b45309;
+}
